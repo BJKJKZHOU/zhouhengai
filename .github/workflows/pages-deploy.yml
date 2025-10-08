@@ -31,9 +31,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # submodules: true
-          # If using the 'assets' git submodule from Chirpy Starter, uncomment above
-          # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
       - name: Setup Pages
         id: pages
@@ -49,11 +46,6 @@ jobs:
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
-
-      # 添加这一步：将sitemap.xml复制到根目录
-      - name: Copy sitemap to root
-        run: |
-          cp "_site${{ steps.pages.outputs.base_path }}/sitemap.xml" "./sitemap.xml" || true
 
       - name: Test site
         run: |
