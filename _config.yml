@@ -221,6 +221,7 @@ exclude:
 # 添加URI编码处理
 gems:
   - jekyll-url-encode
+  - jekyll-sitemap # 添加sitemap插件
 
 url_encode:
   skip: /assets/pdf/

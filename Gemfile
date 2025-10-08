@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.3", ">= 7.3.1"
+gem "jekyll-sitemap", "~> 1.4"  # 添加sitemap生成插件
 
 gem "html-proofer", "~> 5.0", group: :test
 
