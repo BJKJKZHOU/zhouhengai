@@ -36,7 +36,7 @@ image: assets/img/2025-10-04-FOC-Simulink-永磁同步电机控制系统设计�
   .pdf-embed iframe {
     height: 500px; /* 移动设备上适当减小高度 */
   }
-  
+
   .pdf-header {
     text-align: center; /* 移动设备上居中对齐 */
   }
