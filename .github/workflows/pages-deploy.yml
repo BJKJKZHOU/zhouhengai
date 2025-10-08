@@ -50,6 +50,11 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      # 添加这一步：将sitemap.xml复制到根目录
+      - name: Copy sitemap to root
+        run: |
+          cp "_site${{ steps.pages.outputs.base_path }}/sitemap.xml" "./sitemap.xml" || true
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
