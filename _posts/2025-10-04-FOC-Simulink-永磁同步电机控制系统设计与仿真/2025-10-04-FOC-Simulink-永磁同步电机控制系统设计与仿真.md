@@ -12,12 +12,12 @@ image: assets/img/2025-10-04-FOC-Simulink-永磁同步电机控制系统设计�
 
 <div class="pdf-embed">
   <div class="pdf-header" style="text-align: right; margin-bottom: 10px;">
-    <a href="/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf" target="_blank" style="color: #666; text-decoration: none; font-weight: bold;">
+    <a href="{{ '/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf' | relative_url }}" target="_blank" style="color: #666; text-decoration: none; font-weight: bold;">
       <span style="color: #ff0000;">📄</span> 下载PDF
     </a>
   </div>
-  <iframe src="/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf#view=FitH" width="100%" height="700px" style="border: 1px solid #ddd; border-radius: 5px;">
-    <p>您的浏览器不支持iframe，请<a href="/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf" target="_blank">点击这里在新窗口查看PDF文件</a>。</p>
+  <iframe src="{{ '/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf#view=FitH' | relative_url }}" width="100%" height="700px" style="border: 1px solid #ddd; border-radius: 5px;">
+    <p>您的浏览器不支持iframe，请<a href="{{ '/assets/pdf/基于Simulink的永磁同步电机控制系统设计与仿真.pdf' | relative_url }}" target="_blank">点击这里在新窗口查看PDF文件</a>。</p>
   </iframe>
 </div>
 
