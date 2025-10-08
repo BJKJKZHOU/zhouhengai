@@ -149,8 +149,8 @@ pwa:
 
 paginate: 10
 
-# The base URL of your site
-baseurl: "" # 清空baseurl配置
+# The base URL of your site - will be dynamically set by the smart_baseurl plugin
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
