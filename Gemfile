@@ -7,12 +7,8 @@ gem "jekyll-sitemap", "~> 1.4"  # 添加sitemap生成插件
 
 gem "html-proofer", "~> 5.0", group: :test
 
-platforms :mingw, :x64_mingw, :mswin, :jruby do
+platforms :windows, :jruby do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
-end
-
-platforms :windows do
-  # Windows系统特定依赖
   gem "wdm", "~> 0.2.0"
 end
