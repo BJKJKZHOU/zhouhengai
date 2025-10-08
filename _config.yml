@@ -60,6 +60,8 @@ webmaster_verifications:
 analytics:
   google:
     id: # fill in your Google Analytics ID
+  Bing:
+    id: #80CE145B853379B4C54C3516708341B3 # fill in your Bing Analytics ID
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
