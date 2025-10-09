@@ -2,7 +2,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-center">
   <header class="profile-wrapper text-center">
-    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle mx-auto d-block">
+    <a
+      href="{{ '/' | relative_url }}"
+      id="avatar"
+      class="rounded-circle mx-auto d-block"
+      style="margin-left: auto !important; margin-right: auto !important;"
+    >
       {%- if site.avatar != empty and site.avatar -%}
         {%- capture avatar_url -%}
           {% include media-url.html src=site.avatar %}
@@ -11,7 +16,13 @@
       {%- endif -%}
     </a>
 
-    <a class="site-title d-block mx-auto text-center" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a
+      class="site-title d-block mx-auto text-center"
+      href="{{ '/' | relative_url }}"
+      style="text-align: center !important;"
+    >
+      {{- site.title -}}
+    </a>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
   </header>
   <!-- .profile-wrapper -->
