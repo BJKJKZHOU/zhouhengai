@@ -17,7 +17,7 @@
 # QQ联系方式
 - type: qq
   icon: "fa-brands fa-qq"
-  url: "http://wpa.qq.com/msgrd?v=3&uin=2833133714&site=qq&menu=yes"
+  url: "https://wpa.qq.com/msgrd?v=3&uin=2833133714&site=qq&menu=yes"
 
 # Bilibili联系方式
 - type: bilibili
