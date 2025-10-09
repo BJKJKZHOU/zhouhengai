@@ -1,7 +1,7 @@
 #  The contact options.
 
 - type: github
-  icon: "fab fa-github"
+  icon: "fa-brands fa-github"
 
 - type: twitter
   icon: "fa-brands fa-x-twitter"
@@ -13,6 +13,21 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+# QQ联系方式
+- type: qq
+  icon: "fa-brands fa-qq"
+  url: "http://wpa.qq.com/msgrd?v=3&uin=2833133714&site=qq&menu=yes"
+
+# Bilibili联系方式
+- type: bilibili
+  icon: "fa-brands fa-bilibili"
+  url: "https://space.bilibili.com/679347599"
+
+# 网易云音乐配置
+- type: netease-music
+  icon: "fa-solid fa-music" #<i class="fa-solid fa-music"></i>
+  url: "https://music.163.com/playlist?id=2823419033&uct2=U2FsdGVkX1/lHJXulKupodKRmSwjHOKP95AdBo8AfX4="
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
