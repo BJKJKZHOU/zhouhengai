@@ -17,7 +17,7 @@ timezone: Shanghai
 title: ZHOUHENG # the main title
 
 tagline: |-
-  吾生也有涯，而知也无涯。
+  吾生也有涯，而知无涯。
   以有涯随无涯，殆已！
 # it will display as the subtitle
 description: >- # used by seo meta and the atom feed
@@ -113,7 +113,7 @@ toc: true
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
+  provider: "giscus" # 启用giscus评论系统
   # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -123,15 +123,15 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+    repo: "BJKJKZHOU/zhouhengai" # 你的GitHub仓库
+    repo_id: "R_kgDOP-ER2Q" # 从giscus.app获取的仓库ID
+    category: "Announcements" # 讨论分类名称
+    category_id: "DIC_kwDOP-ER2c4Cwdt3" # 从giscus.app获取的分类ID
+    mapping: "pathname" # 使用路径名映射
+    strict: "0" # 非严格模式
+    input_position: "bottom" # 输入框位置在底部
+    lang: "zh-CN" # 中文界面
+    reactions_enabled: "1" # 启用表情反应
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
