@@ -40,11 +40,30 @@
         flex: 1;
       }
 
+      .name-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
       .name {
         font-size: 26px;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin: 0;
         color: #333;
+        flex: 1;
+      }
+
+      .online-resume {
+        font-size: 16px;
+        color: #0066cc;
+        text-decoration: none;
+        white-space: nowrap;
+        margin-left: 20px;
+      }
+      .online-resume:hover {
+        text-decoration: underline;
       }
 
       .basic-info,
@@ -100,6 +119,11 @@
 
       .job-item {
         flex: 1;
+      }
+
+      .job-label {
+        font-weight: bold;
+        margin-right: 8px;
       }
 
       .job-label {
@@ -206,7 +230,7 @@
       }
 
       .work-details li:before {
-        content: '›';
+        content: '•';
         position: absolute;
         left: 0;
       }
@@ -313,7 +337,15 @@
       <!-- 头部信息 -->
       <div class="header">
         <div class="header-text">
-          <h1 class="name">周恒</h1>
+          <div class="name-container">
+            <h1 class="name">周恒</h1>
+            <a
+              href="https://bjkjkzhou.github.io/zhouhengai/resume/resume_ZhouHeng.html"
+              class="online-resume"
+              target="_blank"
+              >在线简历</a
+            >
+          </div>
           <div class="basic-info">
             <span>男</span>
             <span style="margin-left: 15px;">生日：2002-01</span>
@@ -338,12 +370,12 @@
         <h2 class="section-title">期望职位</h2>
         <div class="job-preference">
           <div class="job-item">
-            <div class="job-label">期望职位：</div>
-            <div>电机驱动/嵌入式工程师</div>
+            <span class="job-label">期望职位：</span>
+            <span>电机驱动/嵌入式工程师</span>
           </div>
           <div class="job-item">
-            <div class="job-label">期望位置：</div>
-            <div>深圳/江苏/广州</div>
+            <span class="job-label">期望位置：</span>
+            <span>深圳/江苏/广州</span>
           </div>
         </div>
       </div>
