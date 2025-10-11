@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周恒 - 个人简历</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Microsoft YaHei', Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      .resume-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+      }
+
+      /* 头部信息 */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .header-text {
+        flex: 1;
+      }
+
+      .name {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .basic-info,
+      .contact-info,
+      .blog-link {
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: #666;
+      }
+
+      .photo {
+        width: 110px;
+        height: 140px;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* 内容区域 */
+      .section {
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      /* 期望职位 */
+      .job-preference {
+        display: flex;
+        gap: 30px;
+      }
+
+      .job-item {
+        flex: 1;
+      }
+
+      .job-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* 教育背景 */
+      .education-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 5px;
+      }
+
+      .school {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .date {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .major {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 8px;
+      }
+
+      .thesis {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+      }
+
+      .thesis-label {
+        font-weight: bold;
+        margin-right: 8px;
+        font-size: 14px;
+      }
+
+      /* 技能列表 */
+      .skills-list {
+        list-style-type: none;
+      }
+
+      .skills-list li {
+        margin-bottom: 8px;
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .skills-list li:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+      }
+
+      /* 工作经历 */
+      .work-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 5px;
+      }
+
+      .company {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .location {
+        color: #666;
+      }
+
+      .position {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .role {
+        font-size: 15px;
+        color: #555;
+      }
+
+      .work-details {
+        list-style-type: none;
+        margin-top: 10px;
+      }
+
+      .work-details li {
+        margin-bottom: 8px;
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .work-details li:before {
+        content: '›';
+        position: absolute;
+        left: 0;
+      }
+
+      /* 项目经历 */
+      .project-item {
+        margin-bottom: 20px;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .project-title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .project-date {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .project-details {
+        list-style-type: none;
+        margin-top: 10px;
+      }
+
+      .project-details li {
+        margin-bottom: 8px;
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .project-details li:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+      }
+
+      .project-result {
+        margin-top: 10px;
+      }
+
+      .result-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* 自我评价 */
+      .self-evaluation {
+        font-style: italic;
+        color: #555;
+      }
+
+      /* 分隔线 */
+      hr {
+        border: none;
+        height: 1px;
+        background: #e0e0e0;
+        margin: 20px 0;
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+        }
+
+        .photo {
+          margin-left: 0;
+          margin-top: 15px;
+          align-self: center;
+        }
+
+        .resume-container {
+          padding: 20px;
+        }
+
+        .project-header,
+        .work-header,
+        .education-header {
+          flex-direction: column;
+        }
+
+        .date,
+        .location,
+        .project-date {
+          margin-top: 5px;
+        }
+
+        .job-preference {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <!-- 头部信息 -->
+      <div class="header">
+        <div class="header-text">
+          <h1 class="name">周恒</h1>
+          <div class="basic-info">
+            <span>男</span>
+            <span style="margin-left: 15px;">生日：2002-01</span>
+            <span style="margin-left: 15px;">现住址：广州</span>
+            <span style="margin-left: 15px;">开始工作时间：2023-11</span>
+          </div>
+          <div class="contact-info">
+            <span>手机：17383178786(微信同号)</span>
+            <span style="margin-left: 15px;">邮箱：<a href="mailto:zhouheng644@qq.com">zhouheng644@qq.com</a></span>
+          </div>
+          <div class="blog-link">
+            <span>博客：<a href="https://bjkjkzhou.github.io/zhouhengai/">ZHOUHENG</a></span>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="assets/img/resume/IMG_20240121_182936.jpg" alt="个人照片">
+        </div>
+      </div>
+
+      <!-- 期望职位 -->
+      <div class="section">
+        <h2 class="section-title">期望职位</h2>
+        <div class="job-preference">
+          <div class="job-item">
+            <div class="job-label">期望职位：</div>
+            <div>电机驱动/嵌入式工程师</div>
+          </div>
+          <div class="job-item">
+            <div class="job-label">期望位置：</div>
+            <div>深圳/江苏/广州</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- 教育背景 -->
+      <div class="section">
+        <h2 class="section-title">教育背景</h2>
+        <div class="education-item">
+          <div class="education-header">
+            <div class="school">重庆工程学院</div>
+            <div class="date">2020-09 至 2024-06</div>
+          </div>
+          <div class="major">智能制造学院 | 自动化 | 本科</div>
+          <div class="thesis">
+            <div class="thesis-label">毕业论文：</div>
+            <div>
+              <a href="https://bjkjkzhou.github.io/zhouhengai/posts/FOC-Simulink-%E6%B0%B8%E7%A3%81%E5%90%8C%E6%AD%A5%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/"
+                >基于MATLAB/Simulink的永磁同步电机控制系统设计与仿真</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- 专业技能 -->
+      <div class="section">
+        <h2 class="section-title">专业技能</h2>
+        <ul class="skills-list">
+          <li>
+            熟练使用<strong>Altium Designer</strong>，能够独立设计原理图及绘制PCB，熟悉<strong>Cadence、Kicad</strong
+            >等EDA工具
+          </li>
+          <li>熟练使用<strong>LTspice、PSPice</strong>等电路仿真工具，具备扎实的电路分析与设计能力</li>
+          <li>掌握<strong>PCB焊接</strong>技术，熟练使用加热台、热风枪、电烙铁等焊接设备</li>
+          <li>熟练操作<strong>示波器、LCR电桥、万用表、耐压测试仪、API激光干涉仪</strong>等测试仪器</li>
+          <li>精通<strong>Keil-MDK、STMCubeMX、Git、Visual Studio、Clion、VScode</strong>等开发工具</li>
+          <li>熟悉<strong>PMSM永磁同步电机</strong>和<strong>FOC控制</strong>算法，掌握电机控制理论与实践</li>
+          <li>
+            熟练使用<strong>Simulink</strong>进行控制系统仿真、调试及代码导出，具备<strong
+              >Simulink与PSIM联合仿真</strong
+            >经验
+          </li>
+          <li>
+            具备<strong>直线伺服电机</strong>相关装配测试经验，熟悉<strong>高创、ESTUN</strong>等伺服驱动器配置与调试
+          </li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- 工作经历 -->
+      <div class="section">
+        <h2 class="section-title">工作经历</h2>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="company">玲动电器（广东）有限公司</div>
+            <div class="location">广东|广州</div>
+          </div>
+          <div class="position">
+            <div class="role">研发部|电机驱动工程师</div>
+            <div class="date">2024-12 至 2025-03</div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="company">中研赢创智能科技有限公司</div>
+            <div class="location">四川|遂宁</div>
+          </div>
+          <div class="position">
+            <div class="role">研发部 电机组|电机驱动(硬件)</div>
+            <div class="date">2023-11 至 2024-09</div>
+          </div>
+          <ul class="work-details">
+            <li>
+              <strong>传感器开发</strong
+              >：负责霍尔传感器、差分ABZ传感器开发，包括产品功能定义、接口设计、AD原理图设计、LTspice电路仿真、PCB绘制、DFM分析、打样及BOM输出
+            </li>
+            <li>
+              <strong>电机测试</strong
+              >：使用耐压测试仪和LCR电桥测试电机电气参数，示波器测试反电动势；使用高创CDHD驱动器调试控制回路，测试运动参数、温升、老化、推力电流比等性能指标
+            </li>
+            <li>
+              <strong>精度测试</strong>：架设激光干涉仪，测试电机精度、重复定位精度、直线度，实施精度补偿并验证效果
+            </li>
+            <li>
+              <strong>装配调试</strong
+              >：参与电机生产装配，负责装载头、栅尺贴装；完成大理石直线电机门气浮平台、XYZ大理石平台等精密设备的装配、测试与调试
+            </li>
+            <li><strong>现场支持</strong>：出差至客户现场进行调试测试，及时上报并解决技术问题</li>
+            <li><strong>文档编写</strong>：编写直线电机调试手册、测试手册等技术文档，整理各类驱动器使用问题库</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- 项目经历 -->
+      <div class="section">
+        <h2 class="section-title">项目经历</h2>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-title">FOC电流转速双闭环仿真</div>
+            <div class="project-date">2023.05 - 2023.10</div>
+          </div>
+          <ul class="project-details">
+            <li>
+              搭建<strong
+                >SVPWM模块、Clark/Part变换模块、两电平逆变换器模块、永磁同步电机模块、电流低通滤波器模块</strong
+              >等，构建完整的电机控制回路
+            </li>
+            <li>
+              使用<strong>ST Motor Profiler</strong
+              >工具测量电机参数（转动惯量、电阻、电感等），设置模型初始化参数和逆变器开关频率
+            </li>
+            <li>
+              调节<strong>P参数</strong>，电流环采用<strong>零级点对消</strong
+              >处理，理论计算参数；转速环在理论计算基础上手动调节至最优参数
+            </li>
+          </ul>
+          <div class="project-result">
+            <div class="result-label">项目成果：</div>
+            <div>成功实现电机FOC仿真和优化，电机能够平稳达到设定转速，在负载转矩波动后能快速恢复稳定运行。</div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-title">基于STM32的PID控制回路设计与实现</div>
+            <div class="project-date">2023.01 - 2023.03</div>
+          </div>
+          <ul class="project-details">
+            <li>使用<strong>CubeMX</strong>进行工程硬件初始化，配置时钟、GPIO、定时器、硬件PWM等外设</li>
+            <li>利用<strong>PWM信号</strong>输出控制L298N模块，实现直流电机的驱动控制</li>
+            <li>
+              采用<strong>光电开关和刻度盘</strong>，使用<strong>M/T法</strong
+              >测量转速反馈，构建闭环PID控制系统，实现精确的转速控制
+            </li>
+          </ul>
+          <div class="project-result">
+            <div class="result-label">项目成果：</div>
+            <div>成功实现电机的驱动和控制功能，具备可靠的速度和方向调节能力。</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- 自我评价 -->
+      <div class="section">
+        <h2 class="section-title">自我评价</h2>
+        <div class="self-evaluation">吾生也有涯，而知无涯。</div>
+      </div>
+    </div>
+  </body>
+</html>
