@@ -4,7 +4,7 @@ title: "基于Simulink的永磁同步电机控制系统设计与仿真"
 date: 2025-10-04
 author: zhou_heng
 categories: 文档笔记 
-tags: [文档笔记]
+tags: [文档笔记,Simulink,永磁同步电机,FOC]
 image: assets/img/2025-10-04-FOC-Simulink-永磁同步电机控制系统设计与仿真/FOC仿真模型图.jpg
 ---
 
