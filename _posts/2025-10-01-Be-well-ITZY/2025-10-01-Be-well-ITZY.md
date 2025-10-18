@@ -3,7 +3,7 @@ layout: post
 title: "Be well ITZY"
 author: zhou_heng
 categories: [分享] 
-tags: [分享,音乐]
+tags: [分享,音乐,ITZY]
 image: assets/img/2025-10-01-Be-well-ITZY/PrdsjW4y_400x400.jpg
 ---
 
