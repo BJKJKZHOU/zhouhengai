@@ -65,7 +65,7 @@ analytics:
   Bing:
     id: #80CE145B853379B4C54C3516708341B3 # fill in your Bing Analytics ID
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: zhouheng # fill in your GoatCounter ID
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
@@ -79,7 +79,7 @@ analytics:
 
 # Page views settings
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider: goatcounter # now only supports 'goatcounter'
 
 # Prefer color scheme setting.
 #
@@ -159,6 +159,7 @@ baseurl: ""
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  input: GFM
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
