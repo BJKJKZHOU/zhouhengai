@@ -15,12 +15,14 @@ image: assets/img/2025-10-18-NMIXX-Blue-Valentine/NMIXX(엔믹스)-Blue-Valentin
 
 &emsp;&emsp;NMIXX 这次的专辑主打和先行曲很好听，舞蹈赏心悦目。
 
-【NMIXX】 Blue Valentine Core: “SPINNIN’ ON IT”
+### NMIXX Blue Valentine Core: “SPINNIN’ ON IT”
 
 {% include embed/bilibili.html id='BV1k1HPz9Ecg' %}
 
-NMIXX(엔믹스) “Blue Valentine” M/V
+### NMIXX(엔믹스) “Blue Valentine” M/V
 
 {% include embed/bilibili.html id='BV1CB4yzJEaH' %}
 
 &emsp;&emsp;NMIXX 还有一首中文《蜚蜚》，有录音室视频版，循环听。最喜欢吴海嫄（HAEWON），可能是因为性格底色相近。
+
+{% include embed/youtube.html id='zrYC3LEpc6w' %}
