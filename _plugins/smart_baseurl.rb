@@ -10,9 +10,14 @@ module Jekyll
     end
 
     def detect_environment
-      # 检测GitHub Pages环境
-      if ENV['GITHUB_PAGES'] || ENV['JEKYLL_ENV'] == 'production'
+      # 检测GitHub Pages环境 - 更严格的检测
+      if ENV['GITHUB_PAGES']
         return :github_pages
+      end
+
+      # 检测是否在GitHub Actions中运行
+      if ENV['GITHUB_ACTIONS']
+        return :github_actions
       end
 
       # 检测本地开发环境
@@ -20,9 +25,15 @@ module Jekyll
         return :development
       end
 
-      # 检测是否在GitHub Actions中运行
-      if ENV['GITHUB_ACTIONS']
-        return :github_actions
+      # 如果设置了production环境，但不在GitHub环境中，则认为是本地生产环境
+      if ENV['JEKYLL_ENV'] == 'production'
+        # 检查是否在GitHub环境中
+        if ENV['GITHUB_PAGES'] || ENV['GITHUB_ACTIONS']
+          return :github_pages
+        else
+          # 本地生产环境，不需要baseurl
+          return :development
+        end
       end
 
       # 默认认为是本地开发环境
