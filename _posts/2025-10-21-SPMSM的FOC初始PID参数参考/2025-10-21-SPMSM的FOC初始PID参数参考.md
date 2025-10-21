@@ -5,7 +5,8 @@ date: 2025-10-21
 author: zhou_heng
 categories: [文档笔记] 
 tags: [文档笔记,PMSM,FOC,PID]
-image: assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/Snipaste_2025-10-21_17-53-37.png
+image: 
+  path: /assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/Snipaste_2025-10-21_17-53-37.png
 math: true
 ---
 
