@@ -17,8 +17,8 @@ math: true
 
 &emsp;&emsp;本文采用的是 $$i_d = 0$$ 的控制方法，由于dq轴电流内环具有对称性和相似的系统特性，下面仅分析 $$q$$ 轴电流 PI 调节器的参数整定方法，$$d$$ 轴电流 PI 调节器的参数整定和 $$q$$ 轴类似。
 
-![电流环控制框图-浅色]({{ "/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/电流环1_light.svg" | relative_url }}){: .light .w-75 .rounded-10 }
-![电流环控制框图-深色]({{ "/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/电流环1_dark.svg" | relative_url }}){: .dark .w-75 .rounded-10 }
+![ ](/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/电流环1_light.svg){: .light .w-75 .rounded-10 }
+![ ](/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/电流环1_dark.svg){: .dark .w-75 .rounded-10 }
 
 &emsp;&emsp;电流环的控制器输入由电流设定值和电流反馈之间的差值构成，其输出信号则是参考电压。  
 &emsp;&emsp;第一个框图 $$\frac{1}{1+T_S}$$ 为系统延时环节，第二个为 PI 控制器，第三个为逆变器延时环节。$$T_s$$ 表示电流环的采样周期(可以是PWM基频或更高)，忽略掉动态项 $$𝜔𝜓_f$$ 和耦合项 $$𝜔𝐿_𝑑𝑖_𝑑$$（可以使用前馈电流环解耦实现），$$q$$轴的电磁方程可以写成：
@@ -96,8 +96,8 @@ $$
 
 &emsp;&emsp;将负载转矩 $$T_L$$ 当作扰动引入，由于粘滞摩擦系数 $$B$$ 在实际工程中不容易测量，忽略不计后对控制系统影响较小。由电机数学模型可以得到转速环近似控制框图。
 
-![转数环控制框图-浅色]({{ "/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/转数环框图_1_light.svg" | relative_url }}){: .light .w-75 .rounded-10 }
-![转数环控制框图-深色]({{ "/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/转数环框图_1_dark.svg" | relative_url }}){: .dark .w-75 .rounded-10 }
+![ ](/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/转数环框图_1_light.svg){: .light .w-75 .rounded-10 }
+![ ](/assets/img/2025-10-21-SPMSM的FOC初始PID参数参考/转数环框图_1_dark.svg){: .dark .w-75 .rounded-10 }
 
 &emsp;&emsp;第一个为控制系统延时环节，第二个为转数环 PI 控制器，第三个为电流闭环传递函数 公式(11)。  
 第四个由电机转矩方程 $$T_\mathrm{e}=\frac{3}{2}n_p\psi_\mathrm{f}i_\mathrm{q}$$ 得到。
