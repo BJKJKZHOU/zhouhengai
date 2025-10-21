@@ -153,9 +153,8 @@ pwa:
 
 paginate: 10
 
-# The base URL of your site - will be dynamically set by the smart_baseurl plugin
+#  #baseurl: "/zhouhengai" The base URL of your site - will be dynamically set by the smart_baseurl plugin
 baseurl: ""
-#baseurl: "/zhouhengai"
 
 # ------------ The following options are not recommended to be modified ------------------
 
