@@ -12,7 +12,7 @@ math: true
 
 ## SPMSM 数学模型
 
-### PMSM电机 $$dq$$ 电压方程
+### PMSM电机 $$dq$$ 方程
 
 #### $$d$$ 轴电压方程
 
@@ -230,7 +230,7 @@ $$
 &emsp;&emsp;系统开环传递函数（PI控制器、等效电流环和负载）：
 
 $$
-G(s)H(s)=\frac{K_p(\tau s+1)}{\tau s}\times\frac{1}{{T}_{\Sigma}s+1}\times\frac{1}{Js} \tag{24}
+G(s)H(s)=\frac{K_p(\tau s+1)}{\tau s}\times\frac{1}{\text{T}_{\Sigma}s+1}\times\frac{1}{Js} \tag{24}
 $$
 
 将 $$K_p=2πfJ$$ 代入公式（24），得：
