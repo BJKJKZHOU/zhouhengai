@@ -10,9 +10,39 @@ image:
 math: true
 ---
 
-## SPMSM传递函数
+## SPMSM 数学模型
 
-&emsp;&emsp;永磁同步电机（SPMSM）的电气方程可以表示为：
+### PMSM电机 $$dq$$ 电压方程
+
+#### $$d$$ 轴电压方程
+
+$$
+u_d=R_si_d+L_d\frac{di_d}{dt}-\omega_eL_qi_q
+$$
+
+#### $$q$$ 轴电压方程
+
+$$
+u_q=R_si_q+L_q\frac{di_q}{dt}+\omega_eL_di_d+\omega_e\psi_f
+$$
+
+#### 电磁转矩方程
+
+$$
+T_e=\frac{3}{2}n_p[\psi_fi_q+(L_d-L_q)i_di_q]
+$$
+
+对于表贴式永磁同步电机（SPMSM），$$L_d = L_q $$，方程简化为：
+
+$$
+T_e=\frac{3}{2}n_p\psi_fi_q
+$$
+
+#### 运动方程
+
+$$
+T_e-T_L=J\frac{d\omega_m}{dt}+B\omega_m
+$$
 
 ## 电流环控制器的设计
 
@@ -120,12 +150,12 @@ $$
 W(s)=\frac{K(\tau s+1)}{s^2(Ts+1)} \tag{14}
 $$
 
-&emsp;&emsp;典型II型系统的待定参数有 $$𝐾$$ 和 $$\tau_{s}$$ 。若要保证系统的稳定需要保证 $$τ>T$$，为了方便分析，引入一个新的变量 $$ℎ_s$$ ，其中 $$ℎ_s$$ 是斜率为 $$‐20dB/dec$$ 的中频段宽度，在典型Ⅱ型系统的伯德图中：
+&emsp;&emsp;典型II型系统的待定参数有 $$𝐾$$ 和 $$\tau_{s}$$ 。若要保证系统的稳定需要保证 $$τ>T$$，为了方便分析，引入一个新的变量 $$ℎ_s$$ ，其中 $$ℎ_s$$ 是斜率为 $$‐20dB/dec$$ 的中频段宽度（对数表示），在典型Ⅱ型系统的伯德图中：
 >低频段：两个积分环节，斜率 -40dB/dec  
 >中频段：由于零点作用，斜率变为 -20dB/dec  
 >高频段：由于极点作用，斜率回到 -40dB/dec  
 
-&emsp;&emsp;频段的连接位置 $$\frac{1}{\tau}$$ 零点转折频率 ，$$\frac{1}{T}$$ 惯性环节转折频率。
+&emsp;&emsp;频段的连接位置 $$\frac{1}{\tau}$$ 零点转折频率 ，$$\frac{1}{T}$$ 惯性环节转折频率，使用单位（rad/s）。
 
 $$
 h_s=\lg\frac{\omega_2}{\omega_1}=\lg\omega_2-\lg\omega_1=\lg\frac{1}{\text{T}_{\Sigma}}-\lg\frac{1}{\tau_s} \tag{15}
@@ -135,10 +165,10 @@ $$
 &emsp;&emsp;为保证系统获得最大的稳定裕度，一般将截止频率 $$𝜔_c$$ 设置在 $$\frac{1}{\tau_s}$$ 和 $$\frac{1}{\text{T}_{\Sigma}}$$ 的中点。由此可推出 $$𝜔_c$$：
 
 $$
-\lg\omega_c=\lg\frac{1}{\text{T}_{\Sigma}}-\frac{h_s}{2} ，\omega_c=\frac{1}{\text{T}_{\Sigma}10^{\frac{h_s}{2}}} \tag{16}
+\omega_c = \sqrt{\omega_1 \cdot \omega_2} = \sqrt{\frac{1}{\tau_s} \cdot \frac{1}{T_{\Sigma}}} = \frac{1}{\sqrt{\tau_s T_{\Sigma}}} \tag{16}
 $$
 
-当 $$𝜔 = lg(10) = 1 $$，可推出开环增益 $$K$$ 。
+当 $$𝜔 = 1 \text{ rad/s}$$ 时，可推出开环增益 $$K$$ 。
 
 $$
 20\lg K=40(\lg\omega_1-\lg1)+20(\lg\omega_c-\lg\omega_1) \tag{17}
@@ -152,24 +182,69 @@ $$
 K=\omega_c\omega_1 \tag{19}
 $$
 
-由上述公式可推出典型Ⅱ型系统 $$𝜏_s$$ 和 $$K$$ 计算公式： 
-
-$$
-\begin{cases}\tau_s=T_{\Sigma}10^{h_s}=5T_S10^{h_s}\\K=\omega_1\omega_c=\frac{1}{\tau_s}\cdot\frac{1}{T_{\Sigma}10^{\frac{h_s}{2}}}=\frac{1}{T_{\Sigma}10^hT_{\Sigma}10^{\frac{h_s}{2}}}=\frac{1}{T_{\Sigma}^210^{\frac{3h_s}{2}}}&&\end{cases} \tag{20}
-$$
-
 由系统开环传递函数（13）和典型Ⅱ系统开环传递函数（14）可推出：
 
 $$
-\begin{cases}K=\frac{3}{2}\frac{n_p\psi_fK_p}{J\tau_s}\\T=5T_s&&\end{cases}
+\begin{cases}K=\frac{3}{2}\frac{n_p\psi_fK_p}{J\tau_s}\\T=5T_s&&\end{cases} \tag{20}
 $$
 
 根据典型Ⅱ型系统的参数整定关系可得:
 
 $$
-\frac{\frac{3}{2}n_p\varphi_fk_{sp}}{J\tau_s}=\frac{h_s+1}{2h^2(5T_s)^2}
+\frac{\frac{3}{2}n_p\varphi_fk_{sp}}{J\tau_s}=\frac{h+1}{2h^2(5T_s)^2} \tag{21}
 $$
 
+解出 $$k_{sp}$$ ：
 
+$$
+k_{sp}=\frac{2}{3}\frac{J\tau_s}{n_p\psi_f}\cdot\frac{h+1}{50h^2T_s^2} \tag{21.1}
+$$
 
-[部分参考](https://blog.csdn.net/sy243772901/article/details/110246280)
+代入 $$ \tau_s=h\cdot T_\Sigma $$ 且 $$T_\Sigma=5T_s$$ 得：$$\tau_s=h\cdot5T_s$$ ，带入公式（21.1）得：
+
+$$
+k_{sp}=\frac{2}{3}\frac{J(h\cdot5T_s)}{n_p\psi_f}\cdot\frac{h+1}{50h^2T_s^2}=\frac{2}{3}\cdot\frac{J(h+1)}{10hT_sn_p\psi_f} \tag{21.2}
+$$
+
+计算积分增益 $$k_{si}$$ ：
+
+$$
+k_{si}=\frac{k_{sp}}{\tau_s}=\frac{\frac{2}{3}\cdot\frac{J(h+1)}{10hT_sn_p\psi_f}}{h\cdot5T_s}=\frac{2}{3}\cdot\frac{J(h+1)}{50h^2T_s^2n_p\psi_f} \tag{21.3}
+$$
+
+整理得出转速外环的PI参数为:
+>
+>$$
+>\begin{cases}K_{sp}=\frac{2}{3}\cdot\frac{J(h+1)}{10hT_sn_p\psi_f}\\K_{si}=\frac{2}{3}\cdot\frac{J(h+1)}{50h^2T_s^2n_p\psi_f}&&&\end{cases} \tag{22}
+>$$
+{: .prompt-tip style="font-size: 1.5em;"}
+
+&emsp;&emsp;当系统采样周期 $$𝑇_𝑠=0.00005$$ 时(PWM基频为20kHz)，$$ω = 2πf$$ ，由公式（15）得出第二个转折频率:  
+
+$$
+lg𝜔_2 = lg({2π}\frac{1}{5T_s}) = lg({2π}× 4000) = lg(25132)= 4.40 \tag{23}
+$$
+
+## 带宽设计 快速估算
+
+&emsp;&emsp;系统开环传递函数（PI控制器、等效电流环和负载）：
+
+$$
+G(s)H(s)=\frac{K_p(\tau s+1)}{\tau s}\times\frac{1}{{T}_{\Sigma}s+1}\times\frac{1}{Js} \tag{24}
+$$
+
+将 $$K_p=2πfJ$$ 代入公式（24），得：
+
+$$
+G(s)H(s)=\frac{\omega_x(\tau s+1)}{\tau s^2(T_ss+1)} \tag{25}
+$$
+
+其中 $$\omega_x=2πf$$ 。
+将式（25）与典型Ⅱ型系统开环传递函数（14）对比，得：$$K=\omega_x/\tau$$。 转折频率$$\omega_1=1/\tau$$。  
+将 $$K$$ 和 $$\omega_1$$ 代入公式 (19) $$K=\omega_c\omega_1$$ 得：
+
+$$
+\frac{\omega_x}{\tau}=\frac{1}{\tau}\cdot\omega_c\quad\Rightarrow\quad\omega_x=\omega_c \tag{26}
+$$
+
+即 $$\omega_x$$ 能反应系统的开环截止频率。
