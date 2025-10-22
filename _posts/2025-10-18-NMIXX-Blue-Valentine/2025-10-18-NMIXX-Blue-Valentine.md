@@ -5,7 +5,8 @@ date: 2025-10-18
 author: zhou_heng
 categories: [分享] 
 tags: [音乐,NMIXX]
-image: assets/img/2025-10-18-NMIXX-Blue-Valentine/NMIXX(엔믹스)-Blue-Valentine-Core-“SPINNIN’-ON-IT”.jpg
+image: 
+  path: /assets/img/2025-10-18-NMIXX-Blue-Valentine/NMIXX(엔믹스)-Blue-Valentine-Core-“SPINNIN’-ON-IT”.jpg
 ---
 
 ## NMIXX "Blue Valentine"

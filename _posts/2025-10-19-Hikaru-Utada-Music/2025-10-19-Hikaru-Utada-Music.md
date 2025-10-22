@@ -5,7 +5,8 @@ date: 2025-10-19
 author: zhou_heng
 categories: [分享] 
 tags: [音乐,Hikaru Utada]
-image: assets/img/2025-10-19-Hikaru-Utada-Music/Hikaru Utada.jpg
+image: 
+  path: /assets/img/2025-10-19-Hikaru-Utada-Music/Hikaru Utada.jpg
 ---
 
 ## 音乐分享

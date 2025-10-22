@@ -4,7 +4,8 @@ title: "Standing Next to You 推荐"
 author: zhou_heng
 categories: 分享
 tags: [分享,音乐,ITZY]
-image: assets/img/2025-10-5-Standing-Next-to-You-推荐/RYUJIN_Standing_Next_to_You.png
+image: 
+  path: /assets/img/2025-10-5-Standing-Next-to-You-推荐/RYUJIN_Standing_Next_to_You.png
 ---
 
 ## 250920 RYUJIN Standing Next to You

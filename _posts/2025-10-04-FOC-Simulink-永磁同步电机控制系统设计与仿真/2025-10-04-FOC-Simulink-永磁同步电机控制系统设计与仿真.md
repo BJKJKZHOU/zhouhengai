@@ -5,7 +5,8 @@ date: 2025-10-04
 author: zhou_heng
 categories: 文档笔记 
 tags: [文档笔记,Simulink,永磁同步电机,FOC]
-image: assets/img/2025-10-04-FOC-Simulink-永磁同步电机控制系统设计与仿真/FOC仿真模型图.jpg
+image: 
+  path: /assets/img/2025-10-04-FOC-Simulink-永磁同步电机控制系统设计与仿真/FOC仿真模型图.jpg
 ---
 
 &emsp;&emsp;下面这篇pdf是我的本科毕业论文，当时天天在公司加班，没有多少时间搞实物，就搞了一下仿真，将FOC初浅的梳理了一下。
