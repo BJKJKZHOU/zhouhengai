@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SPMSM的FOC初始PID参数参考"
+title: "SPMSM 的 FOC 初始 PID 参数参考"
 date: 2025-10-21
 author: zhou_heng
 categories: [文档笔记] 
@@ -108,7 +108,7 @@ T_e-T_L=\frac{J}{n_p}\cdot\frac{d\omega_m}{dt} \tag{12}
 $$
 
 &emsp;&emsp;第五个框图 $$\frac{1}{sJ}$$ 由公式 (12) 得到，在 $$s$$ 域 $$\omega_m(s)=\frac{1}{Js}\left(T_e(s)-T_L(s)\right)$$（注意角速度是电气角还是机械角，此公式是机械角）。  
-&emsp;&emsp;将控制系统延时和电流环时间常数合并为 $$5T_{s}$$，且先忽略负载转矩，得开环传递函数为：
+&emsp;&emsp;将控制系统延时和电流环时间常数合并为 $${T}_{\Sigma} = 5T_{s}$$，且先忽略负载转矩，得开环传递函数为：
 
 $$
 W_{os}(s)=\frac{K_{sp}(1+\tau_ss)}{\tau_ss}\frac{1}{(1+5T_ss)}\left(\frac{3}{2}n_p\psi_f\right)\left(\frac{1}{Js}\right)=\frac{\frac{3}{2}n_p\psi_fk_{sp}(\tau_ss+1)}{J\tau_ss^2(5T_ss+1)} \tag{13}
@@ -120,14 +120,56 @@ $$
 W(s)=\frac{K(\tau s+1)}{s^2(Ts+1)} \tag{14}
 $$
 
-典型II型系统的待定参数有 $$𝐾$$ 和 $$\tau_{s}$$。为了方便分析，引入一个新的变量 $$ℎ_s$$ 中频宽，在典型Ⅱ型系统的伯德图中：
->低频段：两个积分环节，斜率 -40dB/dec
->中频段：由于零点作用，斜率变为 -20dB/dec
->高频段：由于极点作用，斜率回到 -40dB/dec
+&emsp;&emsp;典型II型系统的待定参数有 $$𝐾$$ 和 $$\tau_{s}$$ 。若要保证系统的稳定需要保证 $$τ>T$$，为了方便分析，引入一个新的变量 $$ℎ_s$$ ，其中 $$ℎ_s$$ 是斜率为 $$‐20dB/dec$$ 的中频段宽度，在典型Ⅱ型系统的伯德图中：
+>低频段：两个积分环节，斜率 -40dB/dec  
+>中频段：由于零点作用，斜率变为 -20dB/dec  
+>高频段：由于极点作用，斜率回到 -40dB/dec  
+
+&emsp;&emsp;频段的连接位置 $$\frac{1}{\tau}$$ 零点转折频率 ，$$\frac{1}{T}$$ 惯性环节转折频率。
 
 $$
-h_s=\lg\frac{\omega_2}{\omega_1}=\lg\omega_2-\lg\omega_1=\lg\frac{1}{T_{sm}}-\lg\frac{1}{\tau_s}
+h_s=\lg\frac{\omega_2}{\omega_1}=\lg\omega_2-\lg\omega_1=\lg\frac{1}{\text{T}_{\Sigma}}-\lg\frac{1}{\tau_s} \tag{15}
 $$
 
-为保证系统获得最大的稳定裕度，一般将截止频率 $$𝜔_c$$ 设置 $$\frac{1}{\tau_s}$$ 在 $$\frac{1}{T_{sm}}$$ 和的中点。
+&emsp;&emsp;还有的中频宽定义为 $$h= \frac{\tau}{T} =\frac{\omega_2}{\omega_1}$$ ，两个转折频率的比值，是一个无量纲的线性数值。
+&emsp;&emsp;为保证系统获得最大的稳定裕度，一般将截止频率 $$𝜔_c$$ 设置在 $$\frac{1}{\tau_s}$$ 和 $$\frac{1}{\text{T}_{\Sigma}}$$ 的中点。由此可推出 $$𝜔_c$$：
 
+$$
+\lg\omega_c=\lg\frac{1}{\text{T}_{\Sigma}}-\frac{h_s}{2} ，\omega_c=\frac{1}{\text{T}_{\Sigma}10^{\frac{h_s}{2}}} \tag{16}
+$$
+
+当 $$𝜔 = lg(10) = 1 $$，可推出开环增益 $$K$$ 。
+
+$$
+20\lg K=40(\lg\omega_1-\lg1)+20(\lg\omega_c-\lg\omega_1) \tag{17}
+$$
+
+$$
+20\lg K=20(2\lg\omega_1+(\lg\omega_c-\lg\omega_1))=20(\lg\omega_1+\lg\omega_c)=20\lg(\omega_1\omega_c) \tag{18}
+$$
+
+$$
+K=\omega_c\omega_1 \tag{19}
+$$
+
+由上述公式可推出典型Ⅱ型系统 $$𝜏_s$$ 和 $$K$$ 计算公式： 
+
+$$
+\begin{cases}\tau_s=T_{\Sigma}10^{h_s}=5T_S10^{h_s}\\K=\omega_1\omega_c=\frac{1}{\tau_s}\cdot\frac{1}{T_{\Sigma}10^{\frac{h_s}{2}}}=\frac{1}{T_{\Sigma}10^hT_{\Sigma}10^{\frac{h_s}{2}}}=\frac{1}{T_{\Sigma}^210^{\frac{3h_s}{2}}}&&\end{cases} \tag{20}
+$$
+
+由系统开环传递函数（13）和典型Ⅱ系统开环传递函数（14）可推出：
+
+$$
+\begin{cases}K=\frac{3}{2}\frac{n_p\psi_fK_p}{J\tau_s}\\T=5T_s&&\end{cases}
+$$
+
+根据典型Ⅱ型系统的参数整定关系可得:
+
+$$
+\frac{\frac{3}{2}n_p\varphi_fk_{sp}}{J\tau_s}=\frac{h_s+1}{2h^2(5T_s)^2}
+$$
+
+
+
+[部分参考](https://blog.csdn.net/sy243772901/article/details/110246280)
