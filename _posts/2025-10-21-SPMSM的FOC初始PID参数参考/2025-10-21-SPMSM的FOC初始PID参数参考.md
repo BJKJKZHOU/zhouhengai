@@ -130,3 +130,4 @@ h_s=\lg\frac{\omega_2}{\omega_1}=\lg\omega_2-\lg\omega_1=\lg\frac{1}{T_{sm}}-\lg
 $$
 
 为保证系统获得最大的稳定裕度，一般将截止频率 $$𝜔_c$$ 设置 $$\frac{1}{\tau_s}$$ 在 $$\frac{1}{T_{sm}}$$ 和的中点。
+
