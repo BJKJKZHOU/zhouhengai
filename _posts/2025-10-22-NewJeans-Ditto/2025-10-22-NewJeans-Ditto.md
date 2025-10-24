@@ -15,5 +15,3 @@ image:
 &emsp;&emsp;NewJeans，由于公司内斗已经好久没活动了，歌是真的好，MV很梦幻，有点emo。
 
 {% include embed/bilibili.html id='BV1he4y1K7nu' %}
-
-
