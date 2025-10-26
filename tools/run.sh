@@ -40,6 +40,21 @@ while (($#)); do
   esac
 done
 
+# 清理旧的站点地图文件
+echo "清理旧的站点地图文件..."
+if [ -f "sitemap.xml" ]; then
+  rm sitemap.xml
+  echo "已删除旧的 sitemap.xml"
+fi
+
+# 清理构建目录，确保重新生成
+if [ -d "_site" ]; then
+  rm -rf _site
+  echo "已清理 _site 目录"
+fi
+
+command="$command --force_polling"
+
 command="$command -H $host"
 
 if $prod; then
@@ -50,5 +65,6 @@ if [ -e /proc/1/cgroup ] && grep -q docker /proc/1/cgroup; then
   command="$command --force_polling"
 fi
 
+echo "启动Jekyll服务器并重新生成站点地图..."
 echo -e "\n> $command\n"
 eval "$command"
