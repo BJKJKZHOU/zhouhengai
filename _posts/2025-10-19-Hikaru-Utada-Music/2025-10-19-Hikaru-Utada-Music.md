@@ -20,9 +20,9 @@ EVA，知道故事后再听这个音乐和直接听感受不一样。
 
 ### Beautiful World (Da Capo Version)
 
-&emsp;&emsp;07年发布的歌，下面的视频是21年的再唱版，和网易云是不同的 。
+&emsp;&emsp;07年发布的歌，好。
 
-{% include embed/youtube.html id='fVsDtG1y_Qs' %}
+{% include embed/spotify.html id='6aOoUkiQ9rLweL8IkPBN0L' %}
 
 ### Merry Christmas Mr. Lawrence - FYI
 
@@ -30,4 +30,4 @@ EVA，知道故事后再听这个音乐和直接听感受不一样。
  坂本龙一的作品。并且坂本龙一还参与了这歌的制作。  
 &emsp;&emsp;副歌部分给我一种特别的感觉。
 
-{% include embed/youtube.html id='sMf4FZtylgw' %}
+{% include embed/spotify.html id='7nUlfVT328VZNkOR1UaJtK' %}
