@@ -21,6 +21,7 @@
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
         "yzhang.markdown-all-in-one",
+        // Git
         "mhutchie.git-graph",
         "george-alisson.html-preview-vscode"
       ]
