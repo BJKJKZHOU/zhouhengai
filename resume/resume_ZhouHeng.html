@@ -252,6 +252,11 @@
         font-size: 16px;
       }
 
+      .project-type {
+        color: #666;
+        font-size: 14px;
+      }
+
       .project-date {
         color: #666;
         font-size: 14px;
@@ -469,7 +474,7 @@
             <div class="location">四川|遂宁</div>
           </div>
           <div class="position">
-            <div class="role">研发部 电机组|电机驱动(硬件)</div>
+            <div class="role">研发部 电机组|电机驱动</div>
             <div class="date">2023-11 至 2024-09</div>
           </div>
           <ul class="work-details">
@@ -506,7 +511,31 @@
 
         <div class="project-item">
           <div class="project-header">
+            <div class="project-title">电机控制工程实现</div>
+            <div class="project-type">个人项目</div>
+            <div class="project-date">2025.06 - 至今</div>
+          </div>
+          <ul class="project-details">
+            <li>
+              <strong>项目地址：</strong
+              ><a href="https://github.com/BJKJKZHOU/stm32g4-motor-project">STM32G4 电机控制项目</a>
+            </li>
+            <li>仿真验证 <strong>FOC</strong> 算法逻辑，代码实现逻辑。Clarke/Park变换、SVPWM调制、逆Park变换等</li>
+            <li>电流采样：双ADC同步采样三相下桥、动态触发点调整</li>
+            <li>控制算法：<strong>PID/PDFF</strong>统一控制器、抗积分饱和机制</li>
+            <li>位置估计：<strong>IPD脉冲法</strong>初始定位、<strong>非线性观测器</strong>无传感器位置估计</li>
+            <li>归一化系统：物理量与<strong>标幺值</strong>双向转换</li>
+            <li>命令系统：可通过串口输入命令实现参数配置</li>
+            <li>调试验证：VOFA+数据可视化、<strong>CppUTest</strong>测试框架</li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="project-item">
+          <div class="project-header">
             <div class="project-title">FOC电流转速双闭环仿真</div>
+            <div class="project-type">个人项目</div>
             <div class="project-date">2023.05 - 2023.10</div>
           </div>
           <ul class="project-details">
@@ -529,6 +558,8 @@
             <div>成功实现电机FOC仿真和优化，电机能够平稳达到设定转速，在负载转矩波动后能快速恢复稳定运行。</div>
           </div>
         </div>
+
+        <hr>
 
         <div class="project-item">
           <div class="project-header">
