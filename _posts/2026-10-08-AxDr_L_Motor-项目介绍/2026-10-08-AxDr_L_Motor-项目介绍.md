@@ -36,8 +36,8 @@ AxDrive-L 是已有的开源硬件，相关项目地址：
 
 固件围绕 FOC 底层控制实现有感闭环控制、无感控制、电机参数辨识和状态估计等功能，并通过通信与参数接口进行配置和测试。
 
-![AxDr_L_Motor 固件功能架构（浅色）]({{ '/assets/img/2026-10-08-AxDr_L_Motor-项目介绍/axdr-motor-architecture_light.svg' | relative_url }}){: .light }
-![AxDr_L_Motor 固件功能架构（深色）]({{ '/assets/img/2026-10-08-AxDr_L_Motor-项目介绍/axdr-motor-architecture_dark.svg' | relative_url }}){: .dark }
+![AxDr_L_Motor 固件功能架构（浅色）](/assets/img/2026-10-08-AxDr_L_Motor-项目介绍/axdr-motor-architecture_light.svg){: .light }
+![AxDr_L_Motor 固件功能架构（深色）](/assets/img/2026-10-08-AxDr_L_Motor-项目介绍/axdr-motor-architecture_dark.svg){: .dark }
 
 图中展示固件的主要功能模块及其关系，具体控制流程与实现可查看对应源码。
 
